@@ -22,6 +22,7 @@
 		E937D76B28CA1EB100693B40 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E937D76D28CA1EB100693B40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E937D77328CA1F6000693B40 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		E937D77728CA22B500693B40 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +39,7 @@
 		E937D75328CA1EB000693B40 = {
 			isa = PBXGroup;
 			children = (
+				E937D77728CA22B500693B40 /* README.md */,
 				E937D75E28CA1EB000693B40 /* Bankey */,
 				E937D75D28CA1EB000693B40 /* Products */,
 			);
@@ -55,13 +57,29 @@
 			isa = PBXGroup;
 			children = (
 				E937D75F28CA1EB000693B40 /* AppDelegate.swift */,
-				E937D76328CA1EB000693B40 /* LoginViewController.swift */,
-				E937D77328CA1F6000693B40 /* LoginView.swift */,
+				E937D77628CA220500693B40 /* Login */,
+				E937D77528CA21E700693B40 /* Supporting Files */,
+			);
+			path = Bankey;
+			sourceTree = "<group>";
+		};
+		E937D77528CA21E700693B40 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
 				E937D76828CA1EB100693B40 /* Assets.xcassets */,
 				E937D76A28CA1EB100693B40 /* LaunchScreen.storyboard */,
 				E937D76D28CA1EB100693B40 /* Info.plist */,
 			);
-			path = Bankey;
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E937D77628CA220500693B40 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				E937D76328CA1EB000693B40 /* LoginViewController.swift */,
+				E937D77328CA1F6000693B40 /* LoginView.swift */,
+			);
+			name = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,10 +292,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 723HTEFHBA;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Bankey/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -287,7 +306,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = ru.fibeApp.Bankey;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -302,10 +321,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 723HTEFHBA;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Bankey/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -315,7 +335,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = ru.fibeApp.Bankey;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
