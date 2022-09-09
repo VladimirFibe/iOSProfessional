@@ -32,6 +32,13 @@ class OnboardingViewController: UIViewController {
     return $0
   }(UIStackView(arrangedSubviews: [imageView, label]))
   
+  lazy var closeButton: UIButton = {
+    $0.translatesAutoresizingMaskIntoConstraints = false
+    $0.setTitle("Close", for: [])
+    $0.addTarget(self, action: #selector(closeTapped), for: .primaryActionTriggered)
+    return $0
+  }(UIButton(type: .system))
+  
   init(heroImageName: String, titleText: String) {
     self.heroImageName = heroImageName
     self.titleText = titleText
@@ -43,26 +50,31 @@ class OnboardingViewController: UIViewController {
   }
   override func viewDidLoad() {
     super.viewDidLoad()
-    
     setupViews()
     setupConstraints()
   }
-  
-  
-  
 }
 
 extension OnboardingViewController {
   func setupViews() {
     view.backgroundColor = .systemBackground
     view.addSubview(stackView)
+    view.addSubview(closeButton)
   }
   
   func setupConstraints() {
     NSLayoutConstraint.activate([
       stackView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
       stackView.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 1),
-      view.trailingAnchor.constraint(equalToSystemSpacingAfter: stackView.trailingAnchor, multiplier: 1)
+      view.trailingAnchor.constraint(equalToSystemSpacingAfter: stackView.trailingAnchor, multiplier: 1),
+      closeButton.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 2),
+      closeButton.topAnchor.constraint(equalToSystemSpacingBelow: view.topAnchor, multiplier: 5)
     ])
+  }
+}
+// MARK: - Actions
+extension OnboardingViewController {
+  @objc func closeTapped() {
+    print(#function)
   }
 }
