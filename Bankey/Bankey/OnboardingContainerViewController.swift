@@ -64,21 +64,21 @@ extension OnboardingContainerViewController: UIPageViewControllerDataSource {
   }
 }
 
-class ViewController1: UIViewController {
+class ViewController1: OnboardingViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     view.backgroundColor = .systemRed
   }
 }
 
-class ViewController2: UIViewController {
+class ViewController2: OnboardingViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     view.backgroundColor = .systemGreen
   }
 }
 
-class ViewController3: UIViewController {
+class ViewController3: OnboardingViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     view.backgroundColor = .systemBlue
