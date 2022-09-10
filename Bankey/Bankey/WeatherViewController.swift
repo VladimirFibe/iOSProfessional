@@ -3,7 +3,7 @@
 //  Bankey
 //
 //  Created by Vladimir Fibe on 10.09.2022.
-//
+// https://stackoverflow.com/questions/68328038/imageedgeinsets-was-deprecated-in-ios-15-0
 
 import UIKit
 
@@ -11,15 +11,15 @@ class WeatherViewController: UIViewController {
   
   let weatherService = WeatherService()
   lazy var weatherButton: UIButton = {
-    $0.translatesAutoresizingMaskIntoConstraints = false
-    $0.setTitle("Fetch Weather", for: .normal)
-    $0.titleLabel?.adjustsFontSizeToFitWidth = true
-    $0.backgroundColor = .systemBlue
-    $0.layer.cornerRadius = 8
-    $0.contentEdgeInsets = UIEdgeInsets(top: 8, left: 16, bottom: 8, right: 16)
-    $0.addTarget(self, action: #selector(weatherPressed), for: .primaryActionTriggered)
-    return $0
-  }(UIButton(type: .system))
+    var configuration = UIButton.Configuration.filled()
+    configuration.title = "Fetch Weather"
+    let primatyAction = UIAction { action in
+      self.weatherService.fetchWeather()
+    }
+    let button = UIButton(configuration: configuration, primaryAction: primatyAction)
+    button.translatesAutoresizingMaskIntoConstraints = false
+    return button
+  }()
   let cityLabel = makeLabel(withTitle: "City")
   let temperatureLabel = makeLabel(withTitle: "°C")
   let imageView: UIImageView = {
@@ -55,7 +55,8 @@ class WeatherViewController: UIViewController {
       weatherButton.topAnchor.constraint(equalToSystemSpacingBelow: view.safeAreaLayoutGuide.topAnchor, multiplier: 3),
       stackView.topAnchor.constraint(equalToSystemSpacingBelow: weatherButton.bottomAnchor, multiplier: 3),
       stackView.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 1),
-      view.trailingAnchor.constraint(equalToSystemSpacingAfter: stackView.trailingAnchor, multiplier: 1)
+      view.trailingAnchor.constraint(equalToSystemSpacingAfter: stackView.trailingAnchor, multiplier: 1),
+      cityLabel.widthAnchor.constraint(equalTo: temperatureLabel.widthAnchor)
     ])
   }
   @objc func weatherPressed() {
