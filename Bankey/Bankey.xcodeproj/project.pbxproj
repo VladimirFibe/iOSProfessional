@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E91104F328CC17C100284242 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91104F228CC17C100284242 /* WeatherService.swift */; };
+		E91104F528CC197600284242 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91104F428CC197600284242 /* WeatherViewController.swift */; };
 		E937D76028CA1EB000693B40 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E937D75F28CA1EB000693B40 /* AppDelegate.swift */; };
 		E937D76428CA1EB000693B40 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E937D76328CA1EB000693B40 /* LoginViewController.swift */; };
 		E937D76928CA1EB100693B40 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E937D76828CA1EB100693B40 /* Assets.xcassets */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E91104F228CC17C100284242 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
+		E91104F428CC197600284242 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		E937D75C28CA1EB000693B40 /* Bankey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bankey.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E937D75F28CA1EB000693B40 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E937D76328CA1EB000693B40 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -40,6 +44,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E91104F128CC179F00284242 /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+				E91104F228CC17C100284242 /* WeatherService.swift */,
+				E91104F428CC197600284242 /* WeatherViewController.swift */,
+			);
+			name = Weather;
+			sourceTree = "<group>";
+		};
 		E937D75328CA1EB000693B40 = {
 			isa = PBXGroup;
 			children = (
@@ -63,6 +76,7 @@
 				E937D75F28CA1EB000693B40 /* AppDelegate.swift */,
 				E937D77828CA5EE400693B40 /* Onboarding */,
 				E937D77628CA220500693B40 /* Login */,
+				E91104F128CC179F00284242 /* Weather */,
 				E937D77528CA21E700693B40 /* Supporting Files */,
 			);
 			path = Bankey;
@@ -170,6 +184,8 @@
 				E937D76428CA1EB000693B40 /* LoginViewController.swift in Sources */,
 				E9A3CB1C28CB7E76004DC16A /* OnboardingViewController.swift in Sources */,
 				E937D76028CA1EB000693B40 /* AppDelegate.swift in Sources */,
+				E91104F528CC197600284242 /* WeatherViewController.swift in Sources */,
+				E91104F328CC17C100284242 /* WeatherService.swift in Sources */,
 				E937D77A28CA5F1800693B40 /* OnboardingContainerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
