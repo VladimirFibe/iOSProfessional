@@ -7,10 +7,73 @@
 
 import UIKit
 
+protocol OnboardingContainerViewDelegate: AnyObject {
+  func didFinishOnboarding()
+}
+
 class OnboardingContainerViewController: UIViewController {
+  weak var delegate: OnboardingContainerViewDelegate?
   let pageViewController: UIPageViewController
   var pages = [UIViewController]()
-  var currentVC: UIViewController
+  var currentIndex: Int? {
+    pages.firstIndex(of: currentVC)
+  }
+  var currentVC: UIViewController {
+    didSet {
+      if let index = currentIndex {
+        nextButton.isHidden = index == pages.count - 1
+        backButton.isHidden = index == 0
+        doneButton.isHidden = index < pages.count - 1
+      }
+    }
+  }
+  
+  lazy var nextButton: UIButton = {
+    var configuration = UIButton.Configuration.filled()
+    configuration.title = "Next"
+    let primatyAction = UIAction { action in
+      self.next()
+    }
+    let button = UIButton(configuration: configuration, primaryAction: primatyAction)
+    button.translatesAutoresizingMaskIntoConstraints = false
+    return button
+  }()
+  
+  lazy var backButton: UIButton = {
+    var configuration = UIButton.Configuration.filled()
+    configuration.title = "Back"
+    let primatyAction = UIAction { action in
+      self.back()
+    }
+    let button = UIButton(configuration: configuration, primaryAction: primatyAction)
+    button.translatesAutoresizingMaskIntoConstraints = false
+    button.isHidden = true
+    return button
+  }()
+  
+  lazy var closeButton: UIButton = {
+    var configuration = UIButton.Configuration.filled()
+    configuration.title = "Close"
+    let primatyAction = UIAction { action in
+      self.delegate?.didFinishOnboarding()
+    }
+    let button = UIButton(configuration: configuration, primaryAction: primatyAction)
+    button.translatesAutoresizingMaskIntoConstraints = false
+    return button
+  }()
+  
+  lazy var doneButton: UIButton = {
+    var configuration = UIButton.Configuration.filled()
+    configuration.title = "Done"
+    let primatyAction = UIAction { action in
+      self.delegate?.didFinishOnboarding()
+    }
+    let button = UIButton(configuration: configuration, primaryAction: primatyAction)
+    button.translatesAutoresizingMaskIntoConstraints = false
+    button.isHidden = true
+    return button
+  }()
+  
   override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
     self.pageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal)
     let page1 = OnboardingViewController(heroImageName: "delorean", titleText: "Bankey is faster, easier to use, and has a brand new look and feel that will make you fell like you are back in 1989.")
@@ -24,11 +87,16 @@ class OnboardingContainerViewController: UIViewController {
   required init?(coder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     view.backgroundColor = .systemPurple
     addChild(pageViewController)
     view.addSubview(pageViewController.view)
+    view.addSubview(closeButton)
+    view.addSubview(backButton)
+    view.addSubview(nextButton)
+    view.addSubview(doneButton)
     pageViewController.didMove(toParent: self)
     pageViewController.dataSource = self
     pageViewController.view.translatesAutoresizingMaskIntoConstraints = false
@@ -36,22 +104,40 @@ class OnboardingContainerViewController: UIViewController {
       view.topAnchor.constraint(equalTo: pageViewController.view.topAnchor),
       view.leadingAnchor.constraint(equalTo: pageViewController.view.leadingAnchor),
       view.bottomAnchor.constraint(equalTo: pageViewController.view.bottomAnchor),
-      view.trailingAnchor.constraint(equalTo: pageViewController.view.trailingAnchor)
+      view.trailingAnchor.constraint(equalTo: pageViewController.view.trailingAnchor),
+      closeButton.topAnchor.constraint(equalToSystemSpacingBelow: view.safeAreaLayoutGuide.topAnchor, multiplier: 2),
+      closeButton.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 2),
+      backButton.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 2),
+      view.safeAreaLayoutGuide.bottomAnchor.constraint(equalToSystemSpacingBelow: backButton.bottomAnchor, multiplier: 4),
+      view.trailingAnchor.constraint(equalToSystemSpacingAfter: nextButton.trailingAnchor, multiplier: 2),
+      view.safeAreaLayoutGuide.bottomAnchor.constraint(equalToSystemSpacingBelow: nextButton.bottomAnchor, multiplier: 4),
+      view.trailingAnchor.constraint(equalToSystemSpacingAfter: doneButton.trailingAnchor, multiplier: 2),
+      view.safeAreaLayoutGuide.bottomAnchor.constraint(equalToSystemSpacingBelow: doneButton.bottomAnchor, multiplier: 4),
     ])
     pageViewController.setViewControllers([currentVC], direction: .forward, animated: false, completion: nil)
+  }
+  
+  func back() {
+    if let index = currentIndex, index > 0 {
+      currentVC = pages[index - 1]
+    }
+  }
+  
+  func next() {
+    if let index = currentIndex, index + 1 < pages.count {
+      currentVC = pages[index + 1]
+    }
   }
 }
 
 extension OnboardingContainerViewController: UIPageViewControllerDataSource {
   func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-    guard let index = pages.firstIndex(of: viewController), index > 0 else { return nil }
-    currentVC = pages[index - 1]
+    back()
     return currentVC
   }
   
   func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-    guard let index = pages.firstIndex(of: viewController), index + 1 < pages.count else { return nil }
-    currentVC = pages[index + 1]
+    next()
     return currentVC
   }
   

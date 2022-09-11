@@ -59,10 +59,12 @@ class WeatherViewController: UIViewController {
       cityLabel.widthAnchor.constraint(equalTo: temperatureLabel.widthAnchor)
     ])
   }
+  
   @objc func weatherPressed() {
     weatherService.fetchWeather()
   }
 }
+
 func makeLabel(withTitle title: String) -> UILabel {
   let label = UILabel()
   label.translatesAutoresizingMaskIntoConstraints = false
