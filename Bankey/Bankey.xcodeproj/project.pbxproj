@@ -17,6 +17,9 @@
 		E937D77A28CA5F1800693B40 /* OnboardingContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E937D77928CA5F1800693B40 /* OnboardingContainerViewController.swift */; };
 		E984067628CD75090055CF19 /* DummyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E984067528CD75090055CF19 /* DummyViewController.swift */; };
 		E984067B28CD928C0055CF19 /* LocalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = E984067A28CD928C0055CF19 /* LocalState.swift */; };
+		E98F454828CE4CAD0067D657 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98F454728CE4CAD0067D657 /* UIViewController+Extension.swift */; };
+		E98F454A28CE4D890067D657 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98F454928CE4D890067D657 /* UIColor+Extension.swift */; };
+		E98F454C28CE4E9F0067D657 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98F454B28CE4E9F0067D657 /* MainViewController.swift */; };
 		E9A3CB1C28CB7E76004DC16A /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A3CB1B28CB7E76004DC16A /* OnboardingViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +37,9 @@
 		E937D77928CA5F1800693B40 /* OnboardingContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerViewController.swift; sourceTree = "<group>"; };
 		E984067528CD75090055CF19 /* DummyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyViewController.swift; sourceTree = "<group>"; };
 		E984067A28CD928C0055CF19 /* LocalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalState.swift; sourceTree = "<group>"; };
+		E98F454728CE4CAD0067D657 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		E98F454928CE4D890067D657 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		E98F454B28CE4E9F0067D657 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		E9A3CB1B28CB7E76004DC16A /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -78,9 +84,10 @@
 			isa = PBXGroup;
 			children = (
 				E937D75F28CA1EB000693B40 /* AppDelegate.swift */,
+				E98F454B28CE4E9F0067D657 /* MainViewController.swift */,
+				E937D77628CA220500693B40 /* Login */,
 				E937D77828CA5EE400693B40 /* Onboarding */,
 				E984067728CD92620055CF19 /* Utilities */,
-				E937D77628CA220500693B40 /* Login */,
 				E91104F128CC179F00284242 /* Weather */,
 				E937D77528CA21E700693B40 /* Supporting Files */,
 			);
@@ -120,6 +127,8 @@
 			isa = PBXGroup;
 			children = (
 				E984067A28CD928C0055CF19 /* LocalState.swift */,
+				E98F454728CE4CAD0067D657 /* UIViewController+Extension.swift */,
+				E98F454928CE4D890067D657 /* UIColor+Extension.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -197,11 +206,14 @@
 				E937D77428CA1F6000693B40 /* LoginView.swift in Sources */,
 				E984067B28CD928C0055CF19 /* LocalState.swift in Sources */,
 				E937D76428CA1EB000693B40 /* LoginViewController.swift in Sources */,
+				E98F454C28CE4E9F0067D657 /* MainViewController.swift in Sources */,
+				E98F454A28CE4D890067D657 /* UIColor+Extension.swift in Sources */,
 				E9A3CB1C28CB7E76004DC16A /* OnboardingViewController.swift in Sources */,
 				E937D76028CA1EB000693B40 /* AppDelegate.swift in Sources */,
 				E91104F528CC197600284242 /* WeatherViewController.swift in Sources */,
 				E91104F328CC17C100284242 /* WeatherService.swift in Sources */,
 				E937D77A28CA5F1800693B40 /* OnboardingContainerViewController.swift in Sources */,
+				E98F454828CE4CAD0067D657 /* UIViewController+Extension.swift in Sources */,
 				E984067628CD75090055CF19 /* DummyViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

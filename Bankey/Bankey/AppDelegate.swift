@@ -12,14 +12,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   var window: UIWindow?
   let onboarding = OnboardingContainerViewController()
   let login = LoginViewController()
-  let welcome = DummyViewController()
+  let welcome = MainViewController()
   
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
     
     let window = UIWindow(frame: UIScreen.main.bounds)
     onboarding.delegate = self
     login.delegate = self
-    welcome.delegate = self
+//    welcome.delegate = self
+    welcome.selectedIndex = 2
     window.rootViewController = login
     window.backgroundColor = .systemBackground
     window.makeKeyAndVisible()
