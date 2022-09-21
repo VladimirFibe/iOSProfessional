@@ -8,16 +8,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let mainViewController = MainViewController()
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
         
-        let window = UIWindow(frame: UIScreen.main.bounds)
+        window = UIWindow(frame: UIScreen.main.bounds)
         onboardingViewController.delegate = self
         loginViewController.delegate = self
         mainViewController.selectedIndex = 0
+        regitsterForNotifivations()
         mainViewController.setStatusBar()
-        window.backgroundColor = .systemBackground
-        window.makeKeyAndVisible()
-        self.window = window
         displayLogin()
         return true
+    }
+    
+    private func regitsterForNotifivations() {
+        NotificationCenter.default.addObserver(self, selector: #selector(didLogout), name: .logout, object: nil)
+    }
+    
+    @objc func didLogout() {
+        setRootViewController(loginViewController)
     }
     private func displayLogin() {
         setRootViewController(loginViewController)
@@ -33,6 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     private func prepMainView() {
+        
         mainViewController.setStatusBar()
         UINavigationBar.appearance().isTranslucent = false
         UINavigationBar.appearance().backgroundColor = .appColor
@@ -65,6 +72,7 @@ extension AppDelegate {
             self.window?.makeKeyAndVisible()
             return
         }
+        window.backgroundColor = .systemBackground
         window.rootViewController = viewcontroller
         window.makeKeyAndVisible()
         UIView.transition(with: window,

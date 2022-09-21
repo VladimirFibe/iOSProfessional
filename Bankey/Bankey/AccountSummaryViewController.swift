@@ -8,6 +8,12 @@ class AccountSummaryViewController: UIViewController {
     var profile: Profile?
     var accounts: [AccountSummaryCell.ViewModel] = []
     var header = AccountSummaryHeaderView(frame: .zero)
+    
+    lazy var logoutBarButtonItem: UIBarButtonItem = {
+        $0.tintColor = .label
+        return $0
+    }(UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(logoutTapped)))
+    
     var tableView: UITableView = {
         $0.translatesAutoresizingMaskIntoConstraints = false
         return $0
@@ -19,9 +25,10 @@ class AccountSummaryViewController: UIViewController {
         setupConstraints()
         setupTableHeaderView()
         fetchAccounts()
+        setupNavigationBar()
     }
 }
-
+// MARK: - SETUP
 extension AccountSummaryViewController {
     func setupViews() {
         view.addSubview(tableView)
@@ -48,13 +55,17 @@ extension AccountSummaryViewController {
         header.frame.size = size
         tableView.tableHeaderView = header
     }
+    
+    func setupNavigationBar() {
+        navigationItem.rightBarButtonItem = logoutBarButtonItem
+    }
 }
-
+// MARK: - UITABLEVIEWDELEGATE
 extension AccountSummaryViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     }
 }
-
+// MARK: - DATA SOURCE
 extension AccountSummaryViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         accounts.count
@@ -91,5 +102,11 @@ extension AccountSummaryViewController: UITableViewDataSource {
                                          accountName: "Growth Fund",
                                          balance: 15000.01)
         ]
+    }
+}
+// MARK: - ACTION
+extension AccountSummaryViewController {
+    @objc func logoutTapped() {
+        NotificationCenter.default.post(name: .logout, object: nil)
     }
 }

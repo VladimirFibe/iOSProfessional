@@ -61,7 +61,7 @@ class LoginViewController: UIViewController {
         loginView.passwordTextField.text = ""
     }
 }
-
+// MARK: - SETUP
 extension LoginViewController {
     
     func setupViews() {
@@ -98,7 +98,7 @@ extension LoginViewController {
     }
 }
 
-// MARK: - Actions
+// MARK: - ACTIONS
 extension LoginViewController {
     @objc func signInTapped(_ sender: UIButton) {
         errorMessageLabel.isHidden = true

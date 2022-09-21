@@ -8,11 +8,14 @@ class LoginView: UIView {
         return $0 }(UIStackView())
     
     let passwordTextField: UITextField = {
+        $0.text = "welcome"
         $0.placeholder = "Password"
         $0.isSecureTextEntry = true
+        $0.enablePasswordToggle()
         return $0 }(UITextField())
     
     let usernameTextField: UITextField = {
+        $0.text = "kevin"
         $0.placeholder = "Username"
         return $0 }(UITextField())
     
@@ -74,22 +77,5 @@ extension LoginView: UITextFieldDelegate {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-    }
-}
-struct SwiftUILoginView: UIViewRepresentable {
-    func makeUIView(context: Context) -> LoginView {
-        LoginView()
-    }
-    
-    func updateUIView(_ uiView: LoginView, context: Context) { }
-}
-
-struct SwiftUILoginView_Previews: PreviewProvider {
-    static var previews: some View {
-        VStack {
-            SwiftUILoginView()
-            Spacer()
-        }
-        .padding(.horizontal)
     }
 }

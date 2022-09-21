@@ -42,6 +42,7 @@ class AccountSummaryCell: UITableViewCell {
     
     let balanceLabel: UILabel = {
         $0.font = .preferredFont(forTextStyle: .body)
+        $0.adjustsFontSizeToFitWidth = true
         $0.textAlignment = .right
         return $0
     }(UILabel())
