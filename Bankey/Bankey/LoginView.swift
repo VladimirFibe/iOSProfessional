@@ -5,24 +5,28 @@ class LoginView: UIView {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.axis = .vertical
         $0.spacing = 8
-        return $0 }(UIStackView())
+        return $0
+    }(UIStackView())
     
     let passwordTextField: UITextField = {
         $0.text = "welcome"
         $0.placeholder = "Password"
         $0.isSecureTextEntry = true
         $0.enablePasswordToggle()
-        return $0 }(UITextField())
+        return $0
+    }(UITextField())
     
     let usernameTextField: UITextField = {
         $0.text = "kevin"
         $0.placeholder = "Username"
-        return $0 }(UITextField())
+        return $0
+    }(UITextField())
     
     let divederView: UIView = {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.backgroundColor = .secondarySystemFill
-        return $0 }(UIView())
+        return $0
+    }(UIView())
     
     override init(frame: CGRect) {
         super.init(frame: frame)
