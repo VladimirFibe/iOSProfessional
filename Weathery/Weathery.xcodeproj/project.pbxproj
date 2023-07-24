@@ -11,6 +11,7 @@
 		E8AEBFA62A6E0E3B001ED19E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8AEBFA52A6E0E3B001ED19E /* ViewController.swift */; };
 		E8AEBFAB2A6E0E3E001ED19E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8AEBFAA2A6E0E3E001ED19E /* Assets.xcassets */; };
 		E8AEBFAE2A6E0E3E001ED19E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8AEBFAC2A6E0E3E001ED19E /* LaunchScreen.storyboard */; };
+		E8AEBFB62A6E3D10001ED19E /* WeatheryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8AEBFB52A6E3D10001ED19E /* WeatheryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		E8AEBFAA2A6E0E3E001ED19E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E8AEBFAD2A6E0E3E001ED19E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E8AEBFAF2A6E0E3E001ED19E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E8AEBFB52A6E3D10001ED19E /* WeatheryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatheryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 			children = (
 				E8AEBFA12A6E0E3B001ED19E /* AppDelegate.swift */,
 				E8AEBFA52A6E0E3B001ED19E /* ViewController.swift */,
+				E8AEBFB52A6E3D10001ED19E /* WeatheryViewController.swift */,
 				E8AEBFAA2A6E0E3E001ED19E /* Assets.xcassets */,
 				E8AEBFAC2A6E0E3E001ED19E /* LaunchScreen.storyboard */,
 				E8AEBFAF2A6E0E3E001ED19E /* Info.plist */,
@@ -133,6 +136,7 @@
 			files = (
 				E8AEBFA62A6E0E3B001ED19E /* ViewController.swift in Sources */,
 				E8AEBFA22A6E0E3B001ED19E /* AppDelegate.swift in Sources */,
+				E8AEBFB62A6E3D10001ED19E /* WeatheryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
