@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE4B4F262A7587AA001CB0B7 /* WeatherNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE4B4F252A7587AA001CB0B7 /* WeatherNotificationService.swift */; };
 		E8AEBFA22A6E0E3B001ED19E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8AEBFA12A6E0E3B001ED19E /* AppDelegate.swift */; };
 		E8AEBFAB2A6E0E3E001ED19E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E8AEBFAA2A6E0E3E001ED19E /* Assets.xcassets */; };
 		E8AEBFAE2A6E0E3E001ED19E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E8AEBFAC2A6E0E3E001ED19E /* LaunchScreen.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AE4B4F252A7587AA001CB0B7 /* WeatherNotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherNotificationService.swift; sourceTree = "<group>"; };
 		E8AEBF9E2A6E0E3B001ED19E /* Weathery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Weathery.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E8AEBFA12A6E0E3B001ED19E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E8AEBFAA2A6E0E3E001ED19E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 			children = (
 				E8AEBFBB2A6E7A59001ED19E /* WeatherModel.swift */,
 				E8AEBFBD2A6E7A77001ED19E /* WeatherViewModel.swift */,
+				AE4B4F252A7587AA001CB0B7 /* WeatherNotificationService.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -171,6 +174,7 @@
 			files = (
 				E8AEBFA22A6E0E3B001ED19E /* AppDelegate.swift in Sources */,
 				E8AEBFBE2A6E7A77001ED19E /* WeatherViewModel.swift in Sources */,
+				AE4B4F262A7587AA001CB0B7 /* WeatherNotificationService.swift in Sources */,
 				E8AEBFBC2A6E7A59001ED19E /* WeatherModel.swift in Sources */,
 				E8AEBFB62A6E3D10001ED19E /* WeatheryViewController.swift in Sources */,
 			);

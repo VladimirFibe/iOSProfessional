@@ -24,12 +24,25 @@ extension WeatheryViewController {
     }
     
     @objc private func didTapSearchButton() {
-        print(#function)
+        let service = WeatherNotificationService()
+        service.fetchWeather(cityName: "New York")
+    }
+    
+    @objc func receiveWether(_ notification: Notification) {
+        guard let data = notification.userInfo as? [String: WeatherModel],
+              let weatherModel = data["currentWeather"] else { return }
+        temperatureLabel.attributedText = makeTemperatureText(with: weatherModel.temperatureString)
+        conditionImageView.image = UIImage(systemName: weatherModel.conditionName)
+        cityLabel.text = weatherModel.cityName
     }
 }
 // MARK: - Setup Views
 extension WeatheryViewController {
     private func setupViews() {
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(receiveWether),
+                                               name: .didReceiveWeather,
+                                               object: nil)
         setupBackgroundView()
         setupRootStackView()
         setupSearchStackView()
